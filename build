@@ -1,3 +1,2 @@
-cd Backend && go build -o ../Build/server.exe . &
-cd Frontend && npm run build &
-cd PieceMeal && gcc -Wall -Wextra -Werror -O3 -DDEBUG -pthread -o ../Build/piece-meal.exe PieceMealBot.c &
+docker build -t chess-gui .
+docker run -p 8080:8080 chess-gui

@@ -1,0 +1,17 @@
+# Chess Gui
+
+A web interface to play against PieceMeal, my C based chess bot.
+
+## How to use
+
+Build the docker file with the command,
+
+``` bash
+docker build -t chess-gui .
+```
+
+Run the docker file,
+
+``` bash
+docker run -p 8080:8080 chess-gui
+```
