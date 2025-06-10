@@ -194,7 +194,11 @@ func handleMakeMove(arg *json.RawMessage, game *Session) {
 
 	SendGameState(game, "Played Move.")
 
-	go handleBotMove(game)
+	// No need to get bot response when bot has been checkmated. The game is over.
+	if !game.Position.IsCheckmate() {
+		go handleBotMove(game)
+	}
+
 }
 
 func handleUndo(arg *json.RawMessage, game *Session) {
